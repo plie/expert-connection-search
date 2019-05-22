@@ -1,0 +1,19 @@
+<br>
+<h1>Create a new user</h1>
+
+<br>
+<%= form_for @user do |f| %>
+  <p>
+    <%= f.label :name, "Name " %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :website, "Website " %>
+    <%= f.text_field :website %>
+  </p>
+  <p>
+    <%= f.submit "Create", class: 'btn btn-primary' %>
+  </p>
+<% end %>
+
+
