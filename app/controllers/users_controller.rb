@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 
     if @user.save!
       flash[:info] = 'New user created'
-      redirect_to edit_user_path(@user)
+      redirect_to user_path(@user)
     else
       flash[:info] = 'The user did not get created, please try again.'
       redirect_to :back
@@ -35,6 +35,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    @friends = User.where(id: @user.friend_ids)
+
     if params[:search]
     end
   end

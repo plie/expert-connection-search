@@ -1,4 +1,32 @@
 <br>
-<h2>Search for experts</h2>
+<h1><%= @user.name %></h1>
+<br>
+<p><%= @user.website %></p>
+<p><%= @user.head_one[0] %></p>
+
 
 <br>
+<br>
+<h3>Friends</h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</td>
+      <th scope="col">Website</td>
+      <th scope="col">Heading</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @friends.each do |f| %>
+      <tr>
+        <td><%= f.name %></td>
+        <td><%= f.website %></td>
+        <td><%= link_to "geerup.com/#{f.slug}", "/#{f.slug}", :target => "_blank" %></td>
+        <td><%= f.head_one[0] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<h3>Search for experts</h3>

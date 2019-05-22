@@ -16,8 +16,3 @@ class Friend < ApplicationRecord
     { friended_user_id: user_id, user_id: friended_user_id }
   end
 end
-
-
- # def create_inverse
- #    self.class.create(user_id: friended_user_id, friended_user_id: user_id)
- #  end

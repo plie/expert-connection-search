@@ -11,7 +11,7 @@ class LinksController < ApplicationController
       return render "users/index"
     end
 
-    if shortlink
+    if @user
         Rails.logger.info("it worked and now it should open the original url in a new page")
         redirect_to @user.website
     else
