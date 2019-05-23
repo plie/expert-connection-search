@@ -2,3 +2,27 @@
 <h2>Add friends</h2>
 
 <br>
+<h3>Choose your friends</h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</td>
+      <th scope="col">Website</td>
+      <th scope="col">Heading</td>
+      <th scope="col">Connect</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @not_yet_friends.each do |f| %>
+      <tr>
+        <td><%= link_to "#{f.name}", user_path(f) %></td>
+        <td><%= f.website %></td>
+        <td><%= f.head_one[0] %></td>
+        <td><%= link_to 'Friend', user_path(friended_user_id: f.id), :method => :patch, class: 'btn btn-success btn-sm' %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<p><%= link_to 'Find Experts', user_path(@user), class: 'btn btn-success' %>

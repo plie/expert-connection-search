@@ -6,17 +6,15 @@
   <thead>
     <tr>
       <th scope="col">Name</td>
-      <th scope="col">Website</td>
-      <th scope="col">Short link</td>
+      <th scope="col">Open their site</td>
       <th scope="col">Friends</td>
     </tr>
   </thead>
   <tbody>
     <% @users.each do |u| %>
       <tr>
-        <td><%= u.name %></td>
-        <td><%= u.website %></td>
-        <td><%= link_to "geerup.com/#{u.slug}", "http://www.geerup.com/#{u.slug}", :target => "_blank" %></td>
+        <td><%= link_to "#{u.name}", user_path(u) %></td>
+        <td><%= link_to "geerup.com/#{u.slug}", "http://www.geerup.com/#{u.slug}", :target => "_blank", class: 'btn btn-success btn-sm' %></td>
         <td><%= u.friends.count %></td>
       </tr>
     <% end %>
